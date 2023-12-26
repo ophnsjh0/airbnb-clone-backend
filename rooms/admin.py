@@ -10,6 +10,8 @@ class RoomAdmin(admin.ModelAdmin):
         "name",
         "price",
         "kind",
+        "total_amenities",
+        "rating",
         "owner",
         "created_at",
         "updated_at",
@@ -24,6 +26,12 @@ class RoomAdmin(admin.ModelAdmin):
         "created_at",
         "updated_at",
         "category",
+    )
+    
+    search_fields = (
+        "name",
+        "=price",
+        "^owner__username"
     )
 
 
