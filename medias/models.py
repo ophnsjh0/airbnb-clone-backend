@@ -1,4 +1,7 @@
 from django.db import models
+
+# Create your models here.
+from django.db import models
 from common.models import CommonModel
 
 
@@ -14,7 +17,6 @@ class Photo(CommonModel):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        related_name="photos",
     )
 
     experience = models.ForeignKey(
@@ -22,7 +24,6 @@ class Photo(CommonModel):
         on_delete=models.CASCADE,
         null=True,
         blank=True,
-        related_name="photos",
     )
 
     def __str__(self):
@@ -35,15 +36,6 @@ class Vedio(CommonModel):
     experience = models.OneToOneField(
         "experiences.Experience",
         on_delete=models.CASCADE,
-<<<<<<< Updated upstream
-        related_name="videos",
-    )
-
-    kind = models.CharField(
-        max_length=20,
-=======
-        related_name="vedios",
->>>>>>> Stashed changes
     )
 
     def __str__(self):

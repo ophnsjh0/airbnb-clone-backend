@@ -21,10 +21,7 @@ class RoomAdmin(admin.ModelAdmin):
         "price",
         "kind",
         "total_amenities",
-<<<<<<< Updated upstream
         "rating",
-=======
->>>>>>> Stashed changes
         "owner",
         "created_at",
     )

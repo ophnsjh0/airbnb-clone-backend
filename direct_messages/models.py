@@ -3,16 +3,11 @@ from common.models import CommonModel
 
 
 class ChattingRoom(CommonModel):
-
     """Room Model Definition"""
 
     users = models.ManyToManyField(
         "users.User",
-<<<<<<< Updated upstream
         related_name="chattingrooms",
-=======
-        related_name="chattingroom",
->>>>>>> Stashed changes
     )
 
     def __str__(self):
@@ -20,7 +15,6 @@ class ChattingRoom(CommonModel):
 
 
 class Message(CommonModel):
-
     """Message Model Definition"""
 
     text = models.TextField()
@@ -29,20 +23,12 @@ class Message(CommonModel):
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
-<<<<<<< Updated upstream
         related_name="messages",
-=======
-        related_name="message",
->>>>>>> Stashed changes
     )
     room = models.ForeignKey(
         "direct_messages.ChattingRoom",
         on_delete=models.CASCADE,
-<<<<<<< Updated upstream
         related_name="messages",
-=======
-        related_name="message",
->>>>>>> Stashed changes
     )
 
     def __str__(self):
