@@ -38,6 +38,10 @@ class Vedio(CommonModel):
         related_name="videos",
     )
 
+    kind = models.CharField(
+        max_length=20,
+    )
+
     def __str__(self):
         return "Vedio file"
 
