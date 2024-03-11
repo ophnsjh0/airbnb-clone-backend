@@ -20,7 +20,11 @@ class Experience(CommonModel):
     host = models.ForeignKey(
         "users.User",
         on_delete=models.CASCADE,
+<<<<<<< Updated upstream
         related_name="experiences",
+=======
+        related_name="experience",
+>>>>>>> Stashed changes
     )
     price = models.PositiveIntegerField()
     address = models.CharField(
@@ -31,14 +35,22 @@ class Experience(CommonModel):
     description = models.TextField()
     perks = models.ManyToManyField(
         "experiences.Perk",
+<<<<<<< Updated upstream
         related_name="experiences",
+=======
+        related_name="experience",
+>>>>>>> Stashed changes
     )
     category = models.ForeignKey(
         "categories.Category",
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
+<<<<<<< Updated upstream
         related_name="experiences",
+=======
+        related_name="experience",
+>>>>>>> Stashed changes
     )
 
     def __str__(self) -> str:

@@ -35,11 +35,15 @@ class Vedio(CommonModel):
     experience = models.OneToOneField(
         "experiences.Experience",
         on_delete=models.CASCADE,
+<<<<<<< Updated upstream
         related_name="videos",
     )
 
     kind = models.CharField(
         max_length=20,
+=======
+        related_name="vedios",
+>>>>>>> Stashed changes
     )
 
     def __str__(self):

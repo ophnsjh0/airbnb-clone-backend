@@ -8,7 +8,11 @@ class ChattingRoom(CommonModel):
 
     users = models.ManyToManyField(
         "users.User",
+<<<<<<< Updated upstream
         related_name="chattingrooms",
+=======
+        related_name="chattingroom",
+>>>>>>> Stashed changes
     )
 
     def __str__(self):
@@ -25,12 +29,20 @@ class Message(CommonModel):
         null=True,
         blank=True,
         on_delete=models.SET_NULL,
+<<<<<<< Updated upstream
         related_name="messages",
+=======
+        related_name="message",
+>>>>>>> Stashed changes
     )
     room = models.ForeignKey(
         "direct_messages.ChattingRoom",
         on_delete=models.CASCADE,
+<<<<<<< Updated upstream
         related_name="messages",
+=======
+        related_name="message",
+>>>>>>> Stashed changes
     )
 
     def __str__(self):

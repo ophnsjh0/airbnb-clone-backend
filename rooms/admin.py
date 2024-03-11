@@ -21,10 +21,12 @@ class RoomAdmin(admin.ModelAdmin):
         "price",
         "kind",
         "total_amenities",
+<<<<<<< Updated upstream
         "rating",
+=======
+>>>>>>> Stashed changes
         "owner",
         "created_at",
-        "updated_at",
     )
 
     list_filter = (
