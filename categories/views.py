@@ -13,17 +13,15 @@ def categories(request):
         serializer = CategorySerializer(all_categories, many=True)
         return Response(serializer.data)
     elif request.method == "POST":
-        # Category.objects.create(
-        #     name=request.data["name"],
-        #     kind=request.data["kind"],
-        # )
-        return Response({"created": True})
+        serializer = CategorySerializer(data=request.data)
+        if serializer.is_valid():
+            return Response({"created": True})
+        else:
+            return Response(serializer.errors)
 
 
 @api_view(["GET", "PORT"])
 def category(request, pk):
     category = Category.objects.get(pk=pk)
     serializer = CategorySerializer(category)
-    return Response(
-        serializer.data,
-    )
+    return Response(serializer.data)
