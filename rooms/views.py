@@ -28,14 +28,16 @@ class Rooms(APIView):
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = RoomDetailSerializer(data=request.data)
-        if serializer.is_valid():
-            room = serializer.save()
-            return Response(
-                RoomDetailSerializer(room).data,
-            )
-        else:
-            return Response(serializer.errors)
+        print(dir(request.user))
+        if request.user.is_authenticated:
+            serializer = RoomDetailSerializer(data=request.data)
+            if serializer.is_valid():
+                room = serializer.save(owner=request.user)
+                return Response(
+                    RoomDetailSerializer(room).data,
+                )
+            else:
+                return Response(serializer.errors)
 
 
 class Amenities(APIView):

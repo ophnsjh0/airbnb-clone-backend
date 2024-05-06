@@ -15,8 +15,8 @@ class AmenitiesSerializer(ModelSerializer):
 
 class RoomDetailSerializer(ModelSerializer):
     owner = TinyUserSerializer(read_only=True)
-    amenities = AmenitiesSerializer(many=True)
-    category = CategorySerializer()
+    amenities = AmenitiesSerializer(read_only=True, many=True)
+    category = CategorySerializer(read_only=True)
 
     class Meta:
         model = Room
